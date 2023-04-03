@@ -1,0 +1,67 @@
+<form [formGroup]="form" >
+
+  <div class="container d-grid gap-3" style="max-width: 700px;">
+
+    <div class="form-floating">
+      <input (blur)="checkPassenger()" formControlName="email" placeholder="Email" class="form-control" type="text" />
+      <label for="email">Email</label>
+
+      <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback d-block">
+        <div *ngIf="email.errors?.minlength || email.errors?.maxlength ">
+          Email length is invalid.
+        </div>
+
+        <div *ngIf="email.errors?.email">
+          Email is not a valid email format.
+        </div>
+
+
+      </div>
+
+    </div>
+    <div class="d-grid gap-3">
+
+      <div class="form-floating">
+
+        <input formControlName="firstname" class="form-control" type="text" id="firstName" placeholder="First Name" />
+        <label class="form-label" for="firstName">First Name</label>
+
+        <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="invalid-feedback d-block">
+          <div *ngIf="firstname.errors">
+            First name is invalid.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-floating">
+
+        <input formControlName="lastname" placeholder="Last Name" class="form-control" id="lastName" type="text" />
+        <label class="form-label" for="lastName">Last Name</label>
+
+        <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="invalid-feedback d-block">
+          <div *ngIf="lastname.errors">
+            Last name is invalid.
+          </div>
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <input formControlName="isfemale" id="isFemale" class="form-check-input" [value]=true type="radio" />
+        <label class="ms-2 form-check-label" for="isFemale">Female</label>
+      </div>
+      <div>
+        <input formControlName="isfemale" id="isFemale" class="form-check-input" [value]=false type="radio" />
+        <label class="ms-2 form-check-label" for="isFemale">Male</label>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center center">
+      <button (click)="register()" type="submit" class="btn btn-primary">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</form>
+
+
