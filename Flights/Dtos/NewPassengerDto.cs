@@ -16,6 +16,10 @@ namespace Flights.Dtos
         [MaxLength(35)]
         string LastName,
         [Required]
-        bool Gender);
+        bool Gender,
+        bool Birthday
+        );
+
+   
         
 }
