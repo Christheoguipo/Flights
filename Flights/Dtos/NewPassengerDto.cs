@@ -17,9 +17,11 @@ namespace Flights.Dtos
         string LastName,
         [Required]
         bool Gender,
+
         DateTime Birthday,
         string Country,
         bool IsActive,
+        bool IsDeleted,
         string Remarks
         );
 
