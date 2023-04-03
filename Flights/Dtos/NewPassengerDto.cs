@@ -22,6 +22,7 @@ namespace Flights.Dtos
         string Country,
         bool IsActive,
         bool IsDeleted,
+        bool IsVisible,
         string Remarks
         );
 
