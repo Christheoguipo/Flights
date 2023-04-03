@@ -10,7 +10,8 @@ namespace Flights.Dtos
         string PassengerEmail,
         [Required]
         [Range(1,254)]
-        byte NumberOfSeats
+        byte NumberOfSeats,
+        string PassengerEmail2
         );
 
 }
